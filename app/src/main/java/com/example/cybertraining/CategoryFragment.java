@@ -68,13 +68,14 @@ public class CategoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_category, container, false);
         catView = view.findViewById(R.id.cat_Grid);
 
-        //loadCategories();
+        loadCategories();
         CategoryAdapter adapter = new CategoryAdapter(DbQuery.g_catList);
         catView.setAdapter(adapter);
 
 
         return view;
     }
+
 
 
 

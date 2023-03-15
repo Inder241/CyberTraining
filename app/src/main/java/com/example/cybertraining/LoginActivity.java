@@ -14,8 +14,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-
-
 public class LoginActivity extends AppCompatActivity {
 
     private EditText email, password;

@@ -8,6 +8,9 @@ import android.widget.GridView;
 
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link CategoryFragment#newInstance} factory method to
@@ -29,7 +32,7 @@ public class CategoryFragment extends Fragment {
     }
 
     private GridView catView;
-    //public static List<CategoryModel> catList = new ArrayList<>();
+    public static List<CategoryModel> catList = new ArrayList<>();
 
 
     /**

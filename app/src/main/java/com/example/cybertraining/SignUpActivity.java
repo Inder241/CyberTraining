@@ -118,7 +118,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             Toast.makeText(SignUpActivity.this, "Sign up Successfull",Toast.LENGTH_SHORT).show();
 
-                            /*DbQuery.createUserData(emailStr,nameStr, new MyCompleteListener()
+                            DbQuery.createUserData(emailStr,nameStr, new MyCompleteListener()
                                     {
 
                                         @Override
@@ -154,7 +154,7 @@ public class SignUpActivity extends AppCompatActivity {
                             // If sign in fails, display a message to the user.
                             progressDialog.dismiss();
                             Toast.makeText(SignUpActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();*/
+                                    Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

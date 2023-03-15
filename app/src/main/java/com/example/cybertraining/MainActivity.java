@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .setOpenableLayout(drawer)
                 .build();
 
-        //setFragment (new CategoryFragment());
+        setFragment (new CategoryFragment());
     }
 
     @Override

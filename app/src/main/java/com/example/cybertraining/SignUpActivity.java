@@ -14,6 +14,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class SignUpActivity extends AppCompatActivity {
@@ -21,7 +25,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText name, email, pass, confirmPass;
     private Button signupB;
     private ImageView backB;
-    //private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
     private String emailStr, passStr, confirmPassStr, nameStr;
     private Dialog progressDialog;
     private TextView dialogText;
@@ -47,7 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
         dialogText = progressDialog.findViewById(R.id.dialog_text);
         dialogText.setText("Registering user...");
 
-       // mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         backB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,11 +65,11 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (validate()){
-                    //signupNewUser();
+                    signupNewUser();
                 }
 
 
-                //signupNewUser();
+                signupNewUser();
             }
         });
 
@@ -104,7 +108,7 @@ public class SignUpActivity extends AppCompatActivity {
         return true;
     }
 
-    /*private void signupNewUser(){
+    private void signupNewUser(){
         progressDialog.show();
         mAuth.createUserWithEmailAndPassword(emailStr, passStr)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -114,7 +118,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             Toast.makeText(SignUpActivity.this, "Sign up Successfull",Toast.LENGTH_SHORT).show();
 
-                            DbQuery.createUserData(emailStr,nameStr, new MyCompleteListener()
+                            /*DbQuery.createUserData(emailStr,nameStr, new MyCompleteListener()
                                     {
 
                                         @Override
@@ -150,9 +154,9 @@ public class SignUpActivity extends AppCompatActivity {
                             // If sign in fails, display a message to the user.
                             progressDialog.dismiss();
                             Toast.makeText(SignUpActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                                    Toast.LENGTH_SHORT).show();*/
                         }
                     }
                 });
-    }*/
+    }
 }

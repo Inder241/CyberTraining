@@ -11,10 +11,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SplashActivity extends AppCompatActivity {
 
     private TextView appName;
-    //private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.myanim);
         appName.setAnimation(anim);
 
-       // mAuth = FirebaseAuth.getInstance();
+       mAuth = FirebaseAuth.getInstance();
 
         //DbQuery.g_firestore = FirebaseFirestore.getInstance();
 
@@ -44,17 +46,17 @@ public class SplashActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                /*if (mAuth.getCurrentUser()!= null){
+                if (mAuth.getCurrentUser()!= null){
 
                     DbQuery.loadCategories(new MyCompleteListener() {
                         @Override
-                        public void onSuccess() {*/
+                        public void onSuccess() {
                             Intent intent = new Intent(SplashActivity.this,MainActivity.class);
                             startActivity(intent);
                             SplashActivity.this.finish();
                         }
 
-                        /*@Override
+                        @Override
                         public void onFailure() {
                             Toast.makeText(SplashActivity.this, "Something went wrong! Please try again Later.", Toast.LENGTH_SHORT).show();
                         }
@@ -68,7 +70,7 @@ public class SplashActivity extends AppCompatActivity {
                     SplashActivity.this.finish();
                 }
 
-            }*/
+            }
         } .start();
     }
 }

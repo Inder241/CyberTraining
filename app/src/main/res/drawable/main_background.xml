@@ -8,20 +8,7 @@
         </shape>
     </item>
 
-    <item
-        android:bottom="500dp"
-        android:left="100dp"
-        android:right="100dp"
-        android:top="80dp"
-        >
 
-
-        <shape
-            android:shape="oval">
-            <solid android:color="@color/purple_700" />
-        </shape>
-
-    </item>
 
 
 

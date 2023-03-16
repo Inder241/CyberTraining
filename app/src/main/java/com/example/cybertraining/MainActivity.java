@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ActionBarDrawerToggle toggle;
 
     private FrameLayout main_frame;
+    private TextView drawerProfileName, drawerProfileText;
 
 
     private final BottomNavigationView.OnItemSelectedListener onNavigationItemSelectedListener=
@@ -85,12 +87,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_leaderboard, R.id.nav_account)
                 .setOpenableLayout(drawer)
                 .build();
+
+        drawerProfileName = navigationView.getHeaderView(0).findViewById(R.id.nav_drawer_name);
+        drawerProfileText = navigationView.getHeaderView(0).findViewById(R.id.nav_drawer_text_img);
+
+        String name = DbQuery.myProfile.getName();
+        drawerProfileName.setText(name);
+
+        //drawerProfileText.setText(name.toUpperCase().toString());
 
         setFragment (new CategoryFragment());
     }
@@ -124,10 +135,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            setFragment(new CategoryFragment());
 
-        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_account) {
+            setFragment(new AccountFragment());
+
+
+        } else if (id == R.id.nav_leaderboard) {
+            setFragment(new LeaderBoardFragment());
+
 
 
         } else if (id == R.id.nav_send) {

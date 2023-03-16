@@ -26,6 +26,7 @@ public class DbQuery {
     public static int g_selected_cat_index = 0;
 
     public static List<TestModel> g_testList = new ArrayList<>();
+    public static ProfileModel myProfile = new ProfileModel("NA", null);
 
     public static void createUserData(String email, String name, MyCompleteListener completeListener){
 
@@ -57,6 +58,26 @@ public class DbQuery {
                     }
                 });
 
+    }
+
+    public static void getUserData(MyCompleteListener completeListener){
+        g_firestore.collection("USERS").document(FirebaseAuth.getInstance().getUid())
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        myProfile.setName(documentSnapshot.getString("NAME"));
+                        myProfile.setEmail(documentSnapshot.getString("EMAIL_ID"));
+
+                        completeListener.onSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        completeListener.onFailure();
+                    }
+                });
     }
 
     public static void loadCategories (final MyCompleteListener completeListener){
@@ -142,6 +163,21 @@ public class DbQuery {
 
     }
 
+    public static void loadData(MyCompleteListener completeListener){
+
+        loadCategories(new MyCompleteListener() {
+            @Override
+            public void onSuccess() {
+                getUserData(completeListener);
+            }
+
+            @Override
+            public void onFailure() {
+                completeListener.onFailure();
+
+            }
+        });
+    }
 
     }
 

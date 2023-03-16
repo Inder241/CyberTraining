@@ -125,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
 
-                            DbQuery.loadCategories(new MyCompleteListener() {
+                            DbQuery.loadData(new MyCompleteListener() {
                                 @Override
                                 public void onSuccess() {
                                     progressDialog.dismiss();
@@ -199,7 +199,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onSuccess() {
-                                        DbQuery.loadCategories(new MyCompleteListener() {
+                                        DbQuery.loadData(new MyCompleteListener() {
                                             @Override
                                             public void onSuccess() {
                                                 progressDialog.dismiss();
@@ -230,7 +230,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             } else
                             {
-                                DbQuery.loadCategories(new MyCompleteListener() {
+                                DbQuery.loadData(new MyCompleteListener() {
                                     @Override
                                     public void onSuccess() {
                                         progressDialog.dismiss();

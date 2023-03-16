@@ -1,5 +1,6 @@
 package com.example.cybertraining;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,14 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
             testNo = itemView.findViewById(R.id.testNo);
             topScore = itemView.findViewById(R.id.scoretext);
             progressBar = itemView.findViewById(R.id.testProgressBar);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), QuestionsActivity.class);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
         }
         private void setData(int pos, int progress){
             testNo.setText("Test No:" + (pos + 1));

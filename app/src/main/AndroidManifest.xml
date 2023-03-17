@@ -30,6 +30,18 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Library"
+            android:exported="false" />
+        <activity
+            android:name=".concepts"
+            android:exported="false" />
+        <activity
+            android:name=".methods"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:label="@string/app_name"

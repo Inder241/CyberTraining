@@ -10,6 +10,7 @@ public class TestModel {
         this.testID = testID;
         this.topScore = topScore;
         this.time = time;
+
     }
 
     public String getTestID() {

@@ -130,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
                                 public void onSuccess() {
                                     progressDialog.dismiss();
 
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
 
                                     startActivity(intent);
                                     finish();
@@ -203,7 +203,7 @@ public class LoginActivity extends AppCompatActivity {
                                             @Override
                                             public void onSuccess() {
                                                 progressDialog.dismiss();
-                                                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                                Intent intent = new Intent(LoginActivity.this,MainActivity2.class);
                                                 startActivity(intent);
                                                 LoginActivity.this.finish();
                                             }
@@ -235,7 +235,7 @@ public class LoginActivity extends AppCompatActivity {
                                     public void onSuccess() {
                                         progressDialog.dismiss();
 
-                                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                        Intent intent = new Intent(LoginActivity.this,MainActivity2.class);
                                         startActivity(intent);
                                         LoginActivity.this.finish();
                                     }

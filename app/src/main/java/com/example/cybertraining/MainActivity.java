@@ -1,9 +1,11 @@
 package com.example.cybertraining;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -45,15 +47,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     switch (menuItem.getItemId())
                     {
                         case R.id.nav_home:
-                            bottomNavigationView.setSelectedItemId(R.id.nav_home);
+                            setFragment(new CategoryFragment());
                             return true;
 
                         case R.id.nav_leaderboard:
-                            bottomNavigationView.setSelectedItemId(R.id.nav_leaderboard);
+                            setFragment(new LeaderBoardFragment());
                             return true;
 
                         case R.id.nav_account:
-                            bottomNavigationView.setSelectedItemId(R.id.nav_account);
+                            setFragment(new AccountFragment());
                             return true;
                     }
                     return false;
@@ -110,6 +112,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        Button button1 = (Button) findViewById(R.id.fab);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this , MainActivity2.class));
+            }
+        });
         return true;
     }
 

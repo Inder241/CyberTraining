@@ -23,11 +23,15 @@ public class DbQuery {
 
     public static FirebaseFirestore g_firestore;
     public static List<CategoryModel> g_catList = new ArrayList<>();
+
+
     public static int g_selected_cat_index = 0;
+    public static int g_selected_cat_index2= 0;
     public static int g_selected_test_index= 0;
 
 
     public static List<TestModel> g_testList = new ArrayList<>();
+
     public static ProfileModel myProfile = new ProfileModel("NA", null);
     public static List<QuestionModel> g_quesList = new ArrayList<>();
 
@@ -185,8 +189,6 @@ public class DbQuery {
 
                         }
 
-
-
                         completeListener.onSuccess();
                     }
                 })
@@ -198,6 +200,8 @@ public class DbQuery {
                 });
 
     }
+
+
 
     public static void loadData(MyCompleteListener completeListener){
 

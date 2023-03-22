@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_timer"
             android:text="20 : 15min"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/white"
             android:layout_weight="1"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -117,13 +117,13 @@
         >
 
         <ImageButton
+            android:id="@+id/prev_quesB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/prev_quesB"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="24dp"
             android:background="@color/design_default_color_primary_dark"
             app:srcCompat="@drawable/ic_left_foreground"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="24dp"
 
 
             />
@@ -154,7 +154,7 @@
             android:background="@color/design_default_color_primary_dark"
             app:srcCompat="@drawable/ic_right_foreground"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="24dp"
+            android:layout_marginRight="21dp"
 
 
             />

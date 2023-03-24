@@ -99,6 +99,9 @@ public class QuestionsActivity extends AppCompatActivity {
         tvQuesID.setText("1/" + String.valueOf(g_quesList.size())); //display itemID
         catNameTV.setText(g_catList.get(g_selected_cat_index).getName()); //display name
 
+        g_quesList.get(0).setStatus(UNANSWERED);
+
+
     }
 
     private void setSnapHelper()
@@ -115,8 +118,14 @@ public class QuestionsActivity extends AppCompatActivity {
                 quesID = recyclerView.getLayoutManager().getPosition(view); //position of the view visible
 
                 if (g_quesList.get(quesID).getStatus() == NOT_VISITED)
-                {
                     g_quesList.get(quesID).setStatus(UNANSWERED);
+
+                if (g_quesList.get(quesID).getStatus() == REVIEW)
+                {
+                    markImage.setVisibility(View.VISIBLE);
+                } else
+                {
+                    markImage.setVisibility(View.GONE);
                 }
 
                 tvQuesID.setText(String.valueOf(quesID + 1) + "/" + String.valueOf(g_quesList.size()));
@@ -160,6 +169,8 @@ public class QuestionsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 g_quesList.get(quesID).setSelectedAns(-1);
+                g_quesList.get(quesID).setStatus(UNANSWERED);
+                markImage.setVisibility(View.GONE);
                 quesAdapter.notifyDataSetChanged();
             }
         });

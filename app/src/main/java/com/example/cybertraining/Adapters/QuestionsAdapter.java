@@ -1,4 +1,4 @@
-package com.example.cybertraining;
+package com.example.cybertraining.Adapters;
 
 import static com.example.cybertraining.DbQuery.ANSWERED;
 import static com.example.cybertraining.DbQuery.REVIEW;
@@ -13,6 +13,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.cybertraining.DbQuery;
+import com.example.cybertraining.Models.QuestionModel;
+import com.example.cybertraining.R;
 
 import java.util.List;
 

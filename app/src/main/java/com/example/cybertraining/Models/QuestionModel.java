@@ -1,4 +1,4 @@
-package com.example.cybertraining;
+package com.example.cybertraining.Models;
 
 public class QuestionModel {
     private String question;

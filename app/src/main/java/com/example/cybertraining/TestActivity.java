@@ -14,8 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.cybertraining.Adapters.TestAdapter;
 
 public class TestActivity extends AppCompatActivity {
 
@@ -62,10 +61,23 @@ public class TestActivity extends AppCompatActivity {
             @Override
             public void onSuccess() {
 
-                TestAdapter adapter = new TestAdapter(DbQuery.g_testList);
-                testView.setAdapter(adapter);
+                DbQuery.loadMyScores(new MyCompleteListener() {
+                    @Override
+                    public void onSuccess() {
+                        TestAdapter adapter = new TestAdapter(DbQuery.g_testList);
+                        testView.setAdapter(adapter);
 
-                progressDialog.dismiss();
+                        progressDialog.dismiss();
+                    }
+
+                    @Override
+                    public void onFailure() {
+                        progressDialog.dismiss();
+                        Toast.makeText(TestActivity.this, "Something went wrong. Please try again",Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
             }
 
             @Override

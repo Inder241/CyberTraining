@@ -46,15 +46,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     switch (menuItem.getItemId())
                     {
-                        case R.id.nav_home:
+                        case R.id.navigation_home:
                             setFragment(new CategoryFragment());
                             return true;
 
-                        case R.id.nav_leaderboard:
+                        case R.id.navigation_leaderboard:
                             setFragment(new LeaderBoardFragment());
                             return true;
 
-                        case R.id.nav_account:
+                        case R.id.navigation_account:
                             setFragment(new AccountFragment());
                             return true;
                     }

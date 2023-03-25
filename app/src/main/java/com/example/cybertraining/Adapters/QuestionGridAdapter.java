@@ -1,4 +1,4 @@
-package com.example.cybertraining;
+package com.example.cybertraining.Adapters;
 
 import static com.example.cybertraining.DbQuery.ANSWERED;
 import static com.example.cybertraining.DbQuery.NOT_VISITED;
@@ -14,6 +14,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
+
+import com.example.cybertraining.DbQuery;
+import com.example.cybertraining.R;
 
 import org.w3c.dom.Text;
 

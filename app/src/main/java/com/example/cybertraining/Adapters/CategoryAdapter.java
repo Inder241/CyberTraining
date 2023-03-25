@@ -1,4 +1,4 @@
-package com.example.cybertraining;
+package com.example.cybertraining.Adapters;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -6,6 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.cybertraining.DbQuery;
+import com.example.cybertraining.Models.CategoryModel;
+import com.example.cybertraining.R;
+import com.example.cybertraining.TestActivity;
 
 import java.util.List;
 
@@ -46,7 +51,7 @@ public class CategoryAdapter extends BaseAdapter {
             public void onClick(View view) {
                 DbQuery.g_selected_cat_index = i;
 
-                Intent intent = new Intent(view.getContext(),TestActivity.class);
+                Intent intent = new Intent(view.getContext(), TestActivity.class);
 
                 view.getContext().startActivity(intent);
             }

@@ -1,7 +1,5 @@
 package com.example.cybertraining;
 
-import static android.widget.LinearLayout.HORIZONTAL;
-
 import static com.example.cybertraining.DbQuery.ANSWERED;
 import static com.example.cybertraining.DbQuery.NOT_VISITED;
 import static com.example.cybertraining.DbQuery.REVIEW;
@@ -26,15 +24,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.material.color.utilities.Score;
+import com.example.cybertraining.Adapters.QuestionGridAdapter;
+import com.example.cybertraining.Adapters.QuestionsAdapter;
 
 import java.util.concurrent.TimeUnit;
 
@@ -53,6 +50,7 @@ public class QuestionsActivity extends AppCompatActivity {
     private ImageView markImage;
     private QuestionGridAdapter gridAdapter;
      private CountDownTimer timer;
+     private long timeLeft;
 
 
 
@@ -256,7 +254,10 @@ public class QuestionsActivity extends AppCompatActivity {
                 timer.cancel();
                 alertDialog.dismiss();
 
+
                 Intent intent = new Intent(QuestionsActivity.this, ScoreActivity.class);
+                long totalTime = g_testList.get(g_selected_test_index).getTime()*60*1000;
+                intent.putExtra("TIME_TAKEN", totalTime - timeLeft); // we get time in milliseconds
                 startActivity(intent);
                 QuestionsActivity.this.finish();
             }
@@ -272,6 +273,9 @@ public class QuestionsActivity extends AppCompatActivity {
          timer = new CountDownTimer(totalTime + 1000, 1000) {
             @Override
             public void onTick(long remainingTime) {
+
+                timeLeft = remainingTime;
+
                 String time = String.format("%02d:%02d min",
                         TimeUnit.MILLISECONDS.toMinutes(remainingTime),
                         TimeUnit.MILLISECONDS.toSeconds(remainingTime) -
@@ -285,6 +289,8 @@ public class QuestionsActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Intent intent = new Intent(QuestionsActivity.this, ScoreActivity.class);
+                long totalTime = g_testList.get(g_selected_test_index).getTime()*60*1000;
+                intent.putExtra("TIME_TAKEN", totalTime - timeLeft);// we get time in milliseconds
                 startActivity(intent);
                 QuestionsActivity.this.finish();
             }

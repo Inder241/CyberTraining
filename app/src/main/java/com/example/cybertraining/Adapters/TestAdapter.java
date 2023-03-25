@@ -1,4 +1,4 @@
-package com.example.cybertraining;
+package com.example.cybertraining.Adapters;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.cybertraining.DbQuery;
+import com.example.cybertraining.Models.TestModel;
+import com.example.cybertraining.R;
+import com.example.cybertraining.StartTestActivity;
 
 import java.util.List;
 

@@ -13,6 +13,7 @@ import static com.example.cybertraining.DbQuery.g_selected_test_index;
 import static com.example.cybertraining.DbQuery.g_testList;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -218,6 +219,22 @@ public class QuestionsActivity extends AppCompatActivity {
                 }
             }
         });
+        submitB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submitTest();
+            }
+        });
+    }
+
+    private void submitTest()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(QuestionsActivity.this);
+        builder.setCancelable(true); // if user cancel the dialog then we dont submit the test
+
+
+
+
     }
 
     private void startTimer()

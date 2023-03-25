@@ -39,7 +39,7 @@ public class DbQuery {
     public static List<TestModel> g_testList = new ArrayList<>();
 
     public static ProfileModel myProfile = new ProfileModel("NA", null);
-    private static RankModel myPerformance =new RankModel(0, -1);
+    public static RankModel myPerformance =new RankModel(0, -1);
     public static List<QuestionModel> g_quesList = new ArrayList<>();
 
     public static final int NOT_VISITED = 0;

@@ -69,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle("Categories");
+
         bottomNavigationView = findViewById(R.id.bottom_navigationbar);
         main_frame = findViewById(R.id.main_frame);
         bottomNavigationView.setOnItemSelectedListener(onNavigationItemSelectedListener);

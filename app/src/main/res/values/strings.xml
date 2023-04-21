@@ -15,9 +15,9 @@
     <string name="Map">View Library</string>
     <string name="text"> text appear here</string>
     <string name="back"> Back to Homepage</string>
-    <string name="librarytext"> What is CRYPTOGRAPHY? \n \nThis is a way of hiding data to make sure only the recipient is able to see it.
-    \n\nPlease tap on the following button to see the concept and methods.</string>
-    <string name="text3">Welcome to the security training app.This application will provide explanations for the concepts and methods that you will find in the library.</string>
+    <string name="librarytext"> What is Security? \n \nIT security is a set of cybersecurity strategies that prevents unauthorised access to organisational assets such as computers, networks, and data. It maintains the integrity and confidentiality of sensitive information, blocking the access of sophisticated hackers.
+    \n\nPlease tap on the following button to see the concepts or to browse general security knowledge.</string>
+    <string name="text3">Welcome to the security training app.This application will provide explanations for the concepts and provide general knowledge about threats and vulnerabilities.</string>
     <string name="contact">For any enquiries you can see us personally here:
     Digbeth Campus,\n
     High Street Deritend, \n
@@ -28,6 +28,6 @@
         For any other enquiries please contact us at chera.bhupinder@gmail.com
     </string>
 
-    <string name="methods">Tap here for Methods</string>
-    <string name="concepts">Tap here for Concepts</string>
+    <string name="methods">Tap here for Security Knowledge</string>
+    <string name="concepts">Tap here for Security Concepts</string>
 </resources>

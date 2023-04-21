@@ -323,7 +323,7 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             android:id="@+id/leaderboardB"
-            android:text="Check Your Ranking in Leaderbord"
+            android:text="Go back to Main Page"
             android:drawableRight="@mipmap/ic_right"
             android:drawablePadding="16dp"
             android:layout_marginLeft="16dp"
@@ -363,18 +363,6 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="@color/white"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/design_default_color_primary"
-            android:text="VIEW ANSWERS"
-            android:id="@+id/view_answerB"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:elevation="5dp"
-            android:layout_weight="1"
             />
 
     </LinearLayout>

@@ -51,12 +51,7 @@ public class ScoreActivity extends AppCompatActivity {
 
         loadData();
 
-        viewAnsB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
 
         reAttemptB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +61,15 @@ public class ScoreActivity extends AppCompatActivity {
         });
 
         saveResult();
+
+        Button button1 = (Button) findViewById(R.id.leaderboardB);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ScoreActivity.this , MainActivity.class));
+            }
+        });
     }
 
     private void init()
@@ -78,7 +82,7 @@ public class ScoreActivity extends AppCompatActivity {
         unattemptedQTV= findViewById(R.id.un_attemptedQ);
         leaderB= findViewById(R.id.leaderboardB);
         reAttemptB= findViewById(R.id.reattemptB);
-        viewAnsB= findViewById(R.id.view_answerB);
+
 
     }
 
